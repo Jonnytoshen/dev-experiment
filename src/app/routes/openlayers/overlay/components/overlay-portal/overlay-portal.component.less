@@ -1,0 +1,185 @@
+@dev-overlay-portal-prefix-cls: ~'dev-overlay-portal';
+
+.@{dev-overlay-portal-prefix-cls} {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+
+  &-container,
+  &-arrow {
+    position: absolute;
+  }
+
+  &-container {
+    z-index: 0;
+    padding: 16px;
+    border-radius: 2px;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #6980fe;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .45);
+  }
+
+  &-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    box-sizing: content-box;
+  }
+
+
+  // for bottom
+  &.@{dev-overlay-portal-prefix-cls}-bottom > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-bottom-left > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-bottom-right > &-arrow {
+    transform-origin: top center;
+    border-width: 0 5px 80px 5px;
+    border-bottom-color: #6980fe;
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-bottom > &-arrow {
+    transform: translateX(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-bottom > &-container {
+    top: 80px;
+    transform: translateX(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-bottom-left > &-arrow {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-bottom-left > &-container {
+    top: 50px;
+    left: 0;
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-bottom-right > &-arrow {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-bottom-right > &-container {
+    top: 50px;
+    right: 0;
+  }
+
+  // for top
+  &.@{dev-overlay-portal-prefix-cls}-top > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-top-left > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-top-right > &-arrow {
+    transform-origin: bottom center;
+    border-width: 80px 5px 0 5px;
+    border-top-color: #6980fe;
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-top > &-arrow {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-top > &-container {
+    bottom: 80px;
+    transform: translateX(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-top-left > &-arrow {
+    bottom: 0;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-top-left > &-container {
+    bottom: 50px;
+    left: 0;
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-top-right > &-arrow {
+    bottom: 0;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-top-right > &-container {
+    bottom: 50px;
+    right: 0;
+  }
+
+  // for left
+  &.@{dev-overlay-portal-prefix-cls}-left > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-left-top > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-left-bottom > &-arrow {
+    right: 0;
+    transform-origin: right center;
+    border-width: 5px 0 5px 80px;
+    border-left-color: #6980fe;
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-left > &-arrow {
+    transform: translateY(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-left > &-container {
+    right: 80px;
+    transform: translateY(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-left-top > &-arrow {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-left-top > &-container {
+    right: 50px;
+    bottom: 50px;
+    transform: translateY(50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-left-bottom > &-arrow {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-left-bottom > &-container {
+    right: 50px;
+    top: 50px;
+    transform: translateY(-50%);
+  }
+
+  // for right
+  &.@{dev-overlay-portal-prefix-cls}-right > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-right-top > &-arrow,
+  &.@{dev-overlay-portal-prefix-cls}-right-bottom > &-arrow {
+    left: 0;
+    transform-origin: left center;
+    border-width: 5px 80px 5px 0;
+    border-right-color: #6980fe;
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-right > &-arrow {
+    transform: translateY(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-right > &-container {
+    left: 80px;
+    transform: translateY(-50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-right-top > &-arrow {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-right-top > &-container {
+    left: 50px;
+    bottom: 50px;
+    transform: translateY(50%);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-right-bottom > &-arrow {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &.@{dev-overlay-portal-prefix-cls}-right-bottom > &-container {
+    left: 50px;
+    top: 50px;
+    transform: translateY(-50%);
+  }
+}
