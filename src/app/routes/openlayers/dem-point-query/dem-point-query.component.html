@@ -1,0 +1,20 @@
+<div class="dev-dem-point-query-side">
+  <ng-container *ngTemplateOutlet="isLoading ? spinnerTemplate : (renderData ? contentTempalte : emptyTempalte)"></ng-container>
+  <ng-template #emptyTempalte>
+    <nz-empty
+    class="dev-dem-point-query-side-empty"
+    nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+    nzNotFoundContent="点击地图查询 GHI 数据~"></nz-empty>
+  </ng-template>
+  <ng-template #spinnerTemplate>
+    <ng-template #indicatorTemplate><i nz-icon nzType="loading" style="font-size: 32px;"></i></ng-template>
+    <nz-spin class="dev-dem-point-query-side-spinner" nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
+  </ng-template>
+  <ng-template #contentTempalte>
+    <nz-descriptions [nzColumn]="1" nzLayout="vertical">
+      <nz-descriptions-item nzTitle="COORDINATE">{{ coordinateDMS }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="GRAY_INDEX">{{ renderData['GRAY_INDEX'] }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="DATETIME">{{ renderData['timeStamp'] | date: 'yyyy-MM-dd HH:mm:ss' }}</nz-descriptions-item>
+    </nz-descriptions>
+  </ng-template>
+</div>

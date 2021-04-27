@@ -1,0 +1,78 @@
+@import 'ol/ol.css';
+@import '~ng-zorro-antd/empty/style/entry.less';
+@import '~ng-zorro-antd/spin/style/entry.less';
+@import '~ng-zorro-antd/icon/style/entry.less';
+@import '~ng-zorro-antd/descriptions/style/entry.less';
+
+@dev-dem-point-query-prefix-cls: ~"dev-dem-point-query";
+
+.@{dev-dem-point-query-prefix-cls} {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  &-side {
+    overflow: hidden auto;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    bottom: 24px;
+    z-index: 999;
+    padding: 24px 16px;
+    width: 264px;
+    border-radius: 2px;
+    background-color: rgb(41, 50, 60);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+
+    &::-webkit-scrollbar {
+      height: 10px;
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: rgb(41, 50, 60);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgb(58, 69, 82);
+      border: 3px solid rgb(41, 50, 60);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgb(41, 50, 60);
+    }
+
+    &-empty {
+      margin-top: 120px;
+      display: block;
+      text-align: center;
+      color: rgb(106, 116, 133);
+    }
+
+    &-spinner {
+      // display: block;
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    .ant-descriptions-title,
+    .ant-descriptions-item-label,
+    .ant-descriptions-item-content {
+      color: rgb(106, 116, 133);
+    }
+
+    .ant-descriptions-item-label {
+      opacity: .65;
+    }
+
+    .ant-descriptions-item-content {
+      font-weight: bold;
+    }
+
+    .ant-descriptions-item {
+      padding-bottom: 8px;
+    }
+  }
+}
