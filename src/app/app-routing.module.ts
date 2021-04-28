@@ -16,6 +16,10 @@ const routes: Routes = [
       {
         path: 'polygon-shadow-effect',
         loadChildren: () => import('./routes/openlayers/polygon-shadow-effect/polygon-shadow-effect.module').then(m => m.PolygonShadowEffectModule)
+      },
+      {
+        path: 'highlight-tile',
+        loadChildren: () => import('./routes/openlayers/highlight-tile/highlight-tile.module').then(m => m.HighlightTileModule)
       }
     ]
   }
