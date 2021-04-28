@@ -1,1 +1,7 @@
 <router-outlet></router-outlet>
+<ng-container *ngIf="backVisible$ | async">
+  <a class="dev-root-back" [routerLink]="['/']">
+    <i nz-icon nzType="left" nzTheme="outline"></i>
+    <span>返回</span>
+  </a>
+</ng-container>

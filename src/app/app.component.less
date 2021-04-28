@@ -1,0 +1,28 @@
+@import '~ng-zorro-antd/icon/style/entry.less';
+
+@dev-root-prefix-cls: ~'dev-root';
+
+.@{dev-root-prefix-cls} {
+  &-back {
+    position: fixed;
+    left: 24px;
+    top: 24px;
+    z-index: 9999;
+    padding: 8px 16px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1890ff;
+    border-radius: 2px;
+    background-color: rgb(36, 39, 48);
+    cursor: pointer;
+
+    > i {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      background-color: rgb(41, 50, 60);
+    }
+  }
+}

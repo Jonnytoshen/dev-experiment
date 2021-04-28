@@ -3,6 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'table-content',
+    pathMatch: 'full'
+  },
+  {
+    path: 'table-content',
+    loadChildren: () => import('./routes/table-content/table-content.module').then(m => m.TableContentModule)
+  },
+  {
     path: 'openlayers',
     children: [
       {
