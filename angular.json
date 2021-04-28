@@ -38,6 +38,7 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
+              "geobuf",
               "pbf"
             ]
           },
