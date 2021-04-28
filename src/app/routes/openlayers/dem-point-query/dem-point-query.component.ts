@@ -9,7 +9,7 @@ import { Coordinate, toStringHDMS } from 'ol/coordinate';
 import { Style, Circle, Fill, Stroke } from 'ol/style';
 import { Point } from 'ol/geom';
 import { fromEvent } from 'rxjs';
-import { map, pluck, switchMap, tap } from 'rxjs/operators';
+import { filter, map, pluck, switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'dev-dem-point-query',
@@ -88,8 +88,9 @@ export class DemPointQueryComponent implements OnInit {
         map((coordinate: Coordinate) => this.getFeatureInfoUrl(coordinate)!),
         tap(() => this.setLoading(true)),
         switchMap((url: string) => this.http.get(url)),
+        tap(() => this.setLoading(false)),
+        filter(res => res['features'][0]),
         map((res: any) => this.formatResponse(res)),
-        tap(() => this.setLoading(false))
       )
       .subscribe(data => {
         this.renderData = data;
