@@ -117,7 +117,8 @@ export class OverlayComponent implements OnInit {
     const instance: Overlay = new Overlay({
       element,
       position: fromLonLat(position),
-      positioning: OverlayPositioning.CENTER_CENTER
+      positioning: OverlayPositioning.CENTER_CENTER,
+      className: 'dev-overlay-container'
     });
     const componentRef: ComponentRef<OverlayPortalComponent> = domPortalOutlet.attachComponentPortal(portal);
     const placement: OverlayPortalPlacement = this.randomPlacement();
